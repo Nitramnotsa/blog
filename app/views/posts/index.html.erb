@@ -1,0 +1,21 @@
+<% @posts.each do |post| %>
+	<%=post.title%>
+	<br>
+	<%=post.text%>
+
+
+
+	<%post.comments.each do |com|%>
+		<h3> <%=com.content%> </h3>
+	<%end%>
+
+
+	<%= form_for new_comment(post) do |f| %>
+		  <br> <p>Текст комментария:</p>
+		  <%= f.text_area :content, size: "12x12" %>
+		   <br>
+		<%=f.submit%>
+
+	<% end %>
+<% end %>
+

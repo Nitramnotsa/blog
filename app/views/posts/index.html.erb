@@ -10,11 +10,11 @@
 	<%end%>
 
 
-	<%= form_for new_comment(post) do |f| %>
-		  <br> <p>Текст комментария:</p>
+	<%= form_for post.comments.build do |f| %>
+		  <br> <p>comments:</p>
 		  <%= f.text_area :content, size: "12x12" %>
 		   <br>
-		<%=f.submit%>
+	<%=f.submit%>
 
 	<% end %>
 <% end %>
